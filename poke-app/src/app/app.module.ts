@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokeCardComponent } from './poke-card/poke-card.component';
+import { PokeListComponent } from './poke-list/poke-list.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokeCardComponent
+    PokeCardComponent,
+    PokeListComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
