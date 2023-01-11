@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokeCardComponent } from './poke-card/poke-card.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

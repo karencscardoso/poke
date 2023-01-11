@@ -1,5 +1,7 @@
 <section class="poke-container">
-  <app-poke-card *ngFor="let pokemon of pokemons; index as i"
-  [pokemon]="pokemon"
-  [numero]="i + 1" ></app-poke-card>
+  <app-poke-card
+  *ngFor="let pokemon of pokemonService.pokemons; index as i"
+    [pokemon]="pokemon.name"
+    [numero]="i + 1"
+  ></app-poke-card>
 </section>
