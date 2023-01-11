@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokeListComponent implements OnInit {
 
-  pokemons = ['Bulbasaur', 'Charizard', 'Squirtle', 'Charmander', 'Ivysaur', 'Charizard', 'Caterpie', 'Charmander']
+  pokemons = ['Bulbasaur', 'Ivysaur', 'Venosaur', 'Chamander', 'Charmeleon', 'Charizard', 'Squirtle', 'Wartortle']
 
   constructor() { }
 
