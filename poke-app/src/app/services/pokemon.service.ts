@@ -9,13 +9,15 @@ import { PokemonListRequest } from '../poke-list/models/poke-list-request.model'
 })
 export class PokemonService {
 
-  pokemons = [];
+  //pokemons: any[] = [];
 
   constructor(private httpClient: HttpClient) {
-    this.carregarPokemons();
+    //Eu fiz
+    //this.carregarPokemons();
   }
 
-  async carregarPokemons(): Promise<any> {
+  //Eu fiz
+  /*async carregarPokemons(): Promise<any> {
     const requisicao = await this.httpClient
     .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151')
     .toPromise();
@@ -23,6 +25,7 @@ export class PokemonService {
     this.pokemons = requisicao.results;
 
   }
+  */
 
   getAllPokemons(limit: number): Observable<any> {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);

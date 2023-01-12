@@ -4,6 +4,8 @@
   </button>
 </section>
 
+<!-- Eu fiz -->
+<!--
 <section class="poke-container">
   <app-poke-card
   *ngFor="let pokemon of pokemonService.pokemons; index as i"
@@ -11,6 +13,7 @@
     [numero]="i + 1"
   ></app-poke-card>
 </section>
+-->
 
 <hr>
 <h1>Teste novo modelo de request</h1>
@@ -18,6 +21,6 @@
 <section class="poke-container">
   <ng-container *ngFor="let pokemon of listPoke; index as i">
     <app-poke-card [pokemon]="pokemon.name"
-                    [numero]="i + 1"></app-poke-card>
+                   [numero]="i + 1"></app-poke-card>
   </ng-container>
 </section>

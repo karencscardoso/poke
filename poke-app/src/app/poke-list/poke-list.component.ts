@@ -15,11 +15,11 @@ export class PokeListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllPokes();
   }
-  
+
   getAllPokes(): void {
-    this.pokemonService.getAllPokemons(100).subscribe((data: any) => {
-      this.listPoke = data.results;  
-      // const charmeleonSelected = this.listPoke.filter(a => a.name == 'charmeleon')  
+    this.pokemonService.getAllPokemons(12).subscribe((data: any) => {
+      this.listPoke = data.results;
+      // const charmeleonSelected = this.listPoke.filter(a => a.name == 'charmeleon')
       // console.log('charmeleonSelected: ', charmeleonSelected);
     })
   }
