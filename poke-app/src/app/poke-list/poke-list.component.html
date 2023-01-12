@@ -11,3 +11,13 @@
     [numero]="i + 1"
   ></app-poke-card>
 </section>
+
+<hr>
+<h1>Teste novo modelo de request</h1>
+
+<section class="poke-container">
+  <ng-container *ngFor="let pokemon of listPoke; index as i">
+    <app-poke-card [pokemon]="pokemon.name"
+                    [numero]="i + 1"></app-poke-card>
+  </ng-container>
+</section>
