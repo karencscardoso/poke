@@ -1,8 +1,17 @@
-<section>
-  <button mat-icon-button >
+<section class="search">
+  <input type="text" placeholder="Busque pokemon">
+  <button mat-icon-button>
     <mat-icon>search</mat-icon>
   </button>
 </section>
+
+<section class="poke-list-container">
+  <ng-container *ngFor="let pokemon of listPoke; index as i">
+    <app-poke-card [pokemon]="pokemon.name"
+                   [numero]="i + 1"></app-poke-card>
+  </ng-container>
+</section>
+
 
 <!-- Eu fiz -->
 <!--
@@ -15,12 +24,7 @@
 </section>
 -->
 
+<!--
 <hr>
 <h1>Teste novo modelo de request</h1>
-
-<section class="poke-container">
-  <ng-container *ngFor="let pokemon of listPoke; index as i">
-    <app-poke-card [pokemon]="pokemon.name"
-                   [numero]="i + 1"></app-poke-card>
-  </ng-container>
-</section>
+-->

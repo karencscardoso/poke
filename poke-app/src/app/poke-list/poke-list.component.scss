@@ -1,13 +1,32 @@
-.poke-container {
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 30%;
+  background-color: rgb(22, 33, 49);
+  border-radius: 5px;
+}
+
+.search input {
+  width: 80%;
+  color: white;
+}
+
+.search button {
+  color: white;
+}
+
+.poke-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: rgb(22, 33, 49);
   border-radius: 10px;
   padding: 0px 25px 25px 25px;
   width: 45%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
