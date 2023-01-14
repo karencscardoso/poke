@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from './../services/pokemon.service';
+import { PokemonListRequest } from './models/poke-list-request.model';
 
 @Component({
   selector: 'app-poke-list',
@@ -8,19 +9,21 @@ import { PokemonService } from './../services/pokemon.service';
 })
 export class PokeListComponent implements OnInit {
 
-  listPoke: any[] = [];
+  constructor(public pokemonService:PokemonService) { }
 
-  constructor(public pokemonService: PokemonService) { }
+  pokemonsList: any[] = [];
 
   ngOnInit(): void {
-    this.getAllPokes();
+    this.getAllPokemons();
   }
 
-  getAllPokes(): void {
-    this.pokemonService.getAllPokemons(12).subscribe((data: any) => {
-      this.listPoke = data.results;
-      // const charmeleonSelected = this.listPoke.filter(a => a.name == 'charmeleon')
-      // console.log('charmeleonSelected: ', charmeleonSelected);
+  getAllPokemons() {
+    this.pokemonService.getPokemons().subscribe((data:any) => {
+      this.pokemonsList = data.results;
+
+      console.log(this.pokemonsList);
+
     })
   }
+
 }
