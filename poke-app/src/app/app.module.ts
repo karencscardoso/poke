@@ -10,13 +10,15 @@ import { PokeCardComponent } from './poke-list/components/poke-card/poke-card.co
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PokemonService } from './services/pokemon.service';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokeCardComponent,
     PokeListComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

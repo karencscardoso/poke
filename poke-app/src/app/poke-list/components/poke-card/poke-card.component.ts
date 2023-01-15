@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 
 @Component({
   selector: 'app-poke-card',
@@ -29,9 +31,13 @@ export class PokeCardComponent implements OnInit {
   }
   //Fecha formatação de número
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
+  poderes() {
+    this.dialog.open(DialogComponent);
+   }
 
 }

@@ -12,6 +12,7 @@ export class PokeListComponent implements OnInit {
   constructor(public pokemonService:PokemonService) { }
 
   pokemonsList: any[] = [];
+  listSW: any[] = [];
 
   ngOnInit(): void {
     this.getAllPokemons();
