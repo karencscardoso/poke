@@ -36,7 +36,7 @@ export class PokeCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  poderes() {
+  informacao() {
     this.dialog.open(DialogComponent);
    }
 

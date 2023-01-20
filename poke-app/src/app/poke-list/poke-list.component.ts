@@ -28,8 +28,8 @@ export class PokeListComponent implements OnInit {
   }
 
   getAllHabilidades() {
-    this.pokemonService.getHabilidades().subscribe((d:any) => {
-      this.habilidades = d.results;
+    this.pokemonService.getHabilidades().subscribe((dat:any) => {
+      this.habilidades = dat.results;
 
       console.log(this.habilidades);
 

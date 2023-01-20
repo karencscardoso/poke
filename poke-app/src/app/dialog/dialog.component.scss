@@ -1,0 +1,19 @@
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.caracteristica-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.estatistica-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-5 {
+  margin-bottom: 15px;
+}
