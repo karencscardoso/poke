@@ -7,7 +7,7 @@
 
 <section class="poke-list-container">
   <ng-container *ngFor="let pokemon of pokemonsList; index as i">
-    <app-poke-card [pokemon]="pokemon.name"
+    <app-poke-card [pokemon]="pokemon"
                    [numero]="i + 1"></app-poke-card>
   </ng-container>
 </section>

@@ -16,6 +16,7 @@ export class PokeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllPokemons();
+    this.getAllHabilidades();
   }
 
   getAllPokemons() {

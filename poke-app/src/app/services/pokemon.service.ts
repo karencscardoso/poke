@@ -13,6 +13,10 @@ export class PokemonService {
   getPokemons(): Observable<any> {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon`)
   }
+  
+  getPokemonByName(name: string): Observable<any> {
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
 
   getHabilidades(): Observable<any> {
     return this.httpClient.get(`https://pokeapi.co/api/v2/ability`)

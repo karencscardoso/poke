@@ -1,17 +1,24 @@
 <section class="dialog-container">
-  <img src="#" alt="Pokemon">
-  <h1>Pokemon</h1>
+  <img [src]="data.sprites.front_default" alt="Pokemon">
+  <h1>{{ data.name | uppercase }}</h1>
 
   <section class="caracteristica-container">
-    <p>Altura:</p>
-    <p>Peso:</p>
+    <p>Altura: {{ data.height }} m</p>
+    <p>Peso: {{ data.weight }} kl</p>
     <p>Categoria:</p>
     <p>Habilidade:</p>
   </section>
 
   <h2>Estatísticas</h2>
 
-  <section>
+<section class="c-stats">
+  <ng-container *ngFor="let item of data.stats">
+    <label class="c-stats">{{ item.stat.name | uppercase }} ({{ item.base_stat }})</label>
+    <mat-progress-bar class="mb-5" mode="determinate" [value]="item.base_stat"></mat-progress-bar>
+  </ng-container>
+</section>
+
+  <!-- <section>
     <label>HP</label>
     <mat-progress-bar class="mb-5" mode="determinate" value="40"></mat-progress-bar>
     <label>Ataque</label>
@@ -25,7 +32,7 @@
     <label>Velocidade</label>
     <mat-progress-bar class="mb-5" mode="determinate" value="60"></mat-progress-bar>
 
-  </section>
+  </section> -->
 
 </section>
 

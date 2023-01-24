@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-poke-card',
@@ -8,11 +9,8 @@ import { DialogComponent } from 'src/app/dialog/dialog.component';
   styleUrls: ['./poke-card.component.scss']
 })
 export class PokeCardComponent implements OnInit {
-  @Input()
-  pokemon!: String;
-
-  @Input()
-  numero!: number;
+  @Input() pokemon!: any;
+  @Input() numero!: number;
 
   pegarImagemPokemon() {
     const numeroFormatado = this.leadingZero(this.numero);
@@ -31,13 +29,26 @@ export class PokeCardComponent implements OnInit {
   }
   //Fecha formatação de número
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,
+              public pokemonService:PokemonService) { }
 
   ngOnInit(): void {
   }
 
   informacao() {
     this.dialog.open(DialogComponent);
-   }
+  }
+
+  onGetInfo(pokemonName: string): void{
+    console.log('NOME DO POKE QUE EU CLIQUEI: ', pokemonName);
+    this.pokemonService.getPokemonByName(pokemonName).subscribe((pokemon: any) =>{
+      console.log('CARACTERISTICAS DO PERSONAGEM: ', pokemon);
+      
+      this.dialog.open(DialogComponent, {
+        data: pokemon
+      });
+    })
+    
+  }
 
 }
