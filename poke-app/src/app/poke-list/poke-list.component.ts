@@ -12,7 +12,6 @@ export class PokeListComponent implements OnInit {
   constructor(public pokemonService:PokemonService) { }
 
   pokemonsList: any[] = [];
-  habilidades: any[] = [];
 
   ngOnInit(): void {
     this.getAllPokemons();
@@ -22,16 +21,7 @@ export class PokeListComponent implements OnInit {
     this.pokemonService.getPokemons().subscribe((data:any) => {
       this.pokemonsList = data.results;
 
-      console.log(this.pokemonsList);
-
-    })
-  }
-
-  getAllHabilidades() {
-    this.pokemonService.getHabilidades().subscribe((dat:any) => {
-      this.habilidades = dat.results;
-
-      console.log(this.habilidades);
+      //console.log(this.pokemonsList);
 
     })
   }

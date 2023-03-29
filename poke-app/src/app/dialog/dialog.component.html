@@ -1,32 +1,45 @@
 <section class="dialog-container">
-  <img src="#" alt="Pokemon">
-  <h1>Pokemon</h1>
+  <div class="img-container">
+    <img
+      class="img-pokemom"
+      [src]="data.sprites.other.dream_world.front_default"
+      alt="Pokemon"
+    />
+  </div>
 
-  <section class="caracteristica-container">
-    <p>Altura:</p>
-    <p>Peso:</p>
-    <p>Categoria:</p>
-    <p>Habilidade:</p>
-  </section>
+  <div class="informacao">
+    <h1>{{ data.name | uppercase }}</h1>
+    <div class="caracteristicas">
+    <!-- Altura -->
+      <div>
+        <p>Altura</p>
+        <p>{{ data.height }} m</p>
+      </div>
+      <!-- Peso -->
+      <div>
+        <p>Peso</p>
+        <p>{{ data.weight }} kg</p>
+      </div>
+      <div>
+        <p>Habilidade</p>
+        <p>
+          {{ data.abilities[0].ability.name }}
+          {{ data.abilities[1].ability.name }}
+        </p>
+    </div>
+    </div>
 
-  <h2>Estatísticas</h2>
-
-  <section>
-    <label>HP</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="40"></mat-progress-bar>
-    <label>Ataque</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="20"></mat-progress-bar>
-    <label>Defesa</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="80"></mat-progress-bar>
-    <label>Ataque especial</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="30"></mat-progress-bar>
-    <label>Defesa especial</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="50"></mat-progress-bar>
-    <label>Velocidade</label>
-    <mat-progress-bar class="mb-5" mode="determinate" value="60"></mat-progress-bar>
-
-  </section>
-
+    <div class="estatisticas">
+      <ng-container *ngFor="let item of data.stats">
+        <label class="c-stats"
+          >{{ item.stat.name | uppercase }} ({{ item.base_stat }})</label
+        >
+        <mat-progress-bar
+          class="mb-5"
+          mode="determinate"
+          [value]="item.base_stat"
+        ></mat-progress-bar>
+      </ng-container>
+    </div>
+  </div>
 </section>
-
-

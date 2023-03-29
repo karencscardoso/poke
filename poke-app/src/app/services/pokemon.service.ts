@@ -14,7 +14,7 @@ export class PokemonService {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon`)
   }
 
-  getHabilidades(): Observable<any> {
-    return this.httpClient.get(`https://pokeapi.co/api/v2/ability`)
+  getPokemonByName(name: string): Observable<any> {
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
 }

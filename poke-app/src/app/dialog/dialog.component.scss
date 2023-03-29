@@ -1,9 +1,31 @@
 .dialog-container {
   display: flex;
-  flex-direction: column;
-  width: 250px;
+  width: 500px;
 }
 
+.img-container {
+  background-color: chocolate;
+  justify-content: space-between;
+}
+
+.img-pokemom {
+  width: 200px;
+}
+
+.informacao {
+  background-color: aqua;
+  align-items: center;
+}
+
+.caracteristicas {
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+}
+
+.estatisticas {
+  background-color: rgb(0, 243, 162);
+}
 .caracteristica-container {
   display: flex;
   flex-direction: column;

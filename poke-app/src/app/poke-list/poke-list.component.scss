@@ -4,8 +4,9 @@
   justify-content: space-evenly;
   margin: auto;
   width: 30%;
-  background-color: rgb(22, 33, 49);
+  background-color: transparent;
   border-radius: 5px;
+  border: solid 3px #d92929;
 }
 
 .search input {
@@ -22,10 +23,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgb(22, 33, 49);
-  border-radius: 10px;
-  padding: 0px 25px 25px 25px;
-  width: 45%;
+  // background-color: rgb(22, 33, 49);
+  // border-radius: 10px;
+  // padding: 0px 25px 25px 25px;
+  width: 90vw;
   margin: auto;
   margin-top: 30px;
   align-items: center;
