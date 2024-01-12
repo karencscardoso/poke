@@ -11,6 +11,7 @@ import { PokeListComponent } from './poke-list/poke-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PokemonService } from './services/pokemon.service';
 import { DialogComponent } from './dialog/dialog.component';
+import { TipoComponent } from './shared/tipo/tipo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DialogComponent } from './dialog/dialog.component';
     PokeCardComponent,
     PokeListComponent,
     ToolbarComponent,
-    DialogComponent
+    DialogComponent,
+    TipoComponent
   ],
   imports: [
     BrowserModule,

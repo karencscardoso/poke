@@ -1,32 +1,46 @@
 <section class="dialog-container">
   <div class="img-container">
-    <img
+      <img
+        class="img-pokeball"
+        src="assets/img/pokeball.png" alt="">
+      <img
       class="img-pokemom"
       [src]="data.sprites.other.dream_world.front_default"
-      alt="Pokemon"
-    />
+      alt="Pokemon"/>
+
+      <ng-container *ngFor="let tipo of data.types">
+        <div class="tipo">
+
+          <h3>{{ tipo.type.name | uppercase }}</h3>
+
+      </div>
+      </ng-container>
+
   </div>
 
   <div class="informacao">
-    <h1>{{ data.name | uppercase }}</h1>
+    <div class="nome-pokemon">
+      <h1>{{ data.name | uppercase }}</h1>
+    </div>
     <div class="caracteristicas">
-    <!-- Altura -->
+      <!-- Altura -->
       <div>
-        <p>Altura</p>
-        <p>{{ data.height }} m</p>
+        <p>ALTURA</p>
+        <p>{{ data.height }}m</p>
       </div>
       <!-- Peso -->
       <div>
-        <p>Peso</p>
-        <p>{{ data.weight }} kg</p>
+        <p>PESO</p>
+        <p>{{ data.weight }}kg</p>
       </div>
+      <!-- Habilidade -->
       <div>
-        <p>Habilidade</p>
+        <p>HABILIDADE</p>
         <p>
-          {{ data.abilities[0].ability.name }}
-          {{ data.abilities[1].ability.name }}
+          {{ data.abilities[0].ability.name | uppercase }},
+          {{ data.abilities[1].ability.name | uppercase }}
         </p>
-    </div>
+      </div>
     </div>
 
     <div class="estatisticas">

@@ -1,37 +1,50 @@
 .dialog-container {
   display: flex;
-  width: 500px;
+  width: 600px;
+  justify-content: space-around;
 }
 
 .img-container {
-  background-color: chocolate;
-  justify-content: space-between;
+  // background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+
 }
 
+.img-pokeball {
+  width: 150px;
+  position: absolute;
+  opacity: 50%;
+}
 .img-pokemom {
-  width: 200px;
+  width: 150px;
+  position: absolute;
+
+}
+
+
+.nome-pokemon {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .informacao {
-  background-color: aqua;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .caracteristicas {
-  background-color: brown;
   display: flex;
-  flex-direction: row;
+  width: 300px;
+  text-align: center;
+  justify-content: space-between;
 }
 
-.estatisticas {
-  background-color: rgb(0, 243, 162);
-}
 .caracteristica-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.estatistica-container {
   display: flex;
   flex-direction: column;
 }
@@ -39,3 +52,5 @@
 .mb-5 {
   margin-bottom: 15px;
 }
+
+
