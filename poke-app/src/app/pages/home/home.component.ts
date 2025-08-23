@@ -1,25 +1,24 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { map, startWith } from 'rxjs/operators';  
 import { Observable } from 'rxjs';
-import { PokemonService } from './../services/pokemon.service';
 import { FormControl } from '@angular/forms';
-import { PokeCardComponent } from '../shared/poke-card/poke-card.component';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokeCardComponent } from 'src/app/shared/poke-card/poke-card.component';
 
 export interface User {
   name: string;
 }
 
 @Component({
-  selector: 'app-poke-list',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule, PokeCardComponent],
-  templateUrl: './poke-list.component.html',
-  styleUrls: ['./poke-list.component.scss']
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class PokeListComponent implements OnInit {
-  myControl = new FormControl();
+export class HomeComponent implements OnInit {
+myControl = new FormControl();
   options: User[] = [
     {name: 'Mary'},
     {name: 'Shelley'},
@@ -55,5 +54,3 @@ export class PokeListComponent implements OnInit {
     });
   }
 }
-
-

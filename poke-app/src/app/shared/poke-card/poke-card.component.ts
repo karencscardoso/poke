@@ -1,10 +1,16 @@
+
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-poke-card',
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatDialogModule],
   templateUrl: './poke-card.component.html',
   styleUrls: ['./poke-card.component.scss']
 })

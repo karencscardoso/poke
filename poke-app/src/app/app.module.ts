@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PokeCardComponent } from './poke-list/components/poke-card/poke-card.component';
+import { PokeCardComponent } from './shared/poke-card/poke-card.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PokemonService } from './services/pokemon.service';
@@ -15,12 +15,7 @@ import { TipoComponent } from './shared/tipo/tipo.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PokeCardComponent,
-    PokeListComponent,
-    ToolbarComponent,
-    DialogComponent,
-    TipoComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -30,6 +25,6 @@ import { TipoComponent } from './shared/tipo/tipo.component';
     HttpClientModule
   ],
   providers: [PokemonService],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
