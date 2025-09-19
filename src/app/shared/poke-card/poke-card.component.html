@@ -1,24 +1,17 @@
-<div class="box-card">
-  <mat-card class="card" (click)="onGetInfo(pokemon.name)">
-    <!--<img
-      class="img-card-100"
-      [src]="pokemon.sprites.other.dream_world.front_default"
-    />-->
-    <img
-      class="img-card-100"
-      [src]="pokemon.sprites.other['official-artwork'].front_default"
+  <mat-card class="c-card" (click)="onGetInfo(pokemon.name)">
+    <img class="c-card__image"
+        [src]="pokemon.sprites.other['official-artwork'].front_default"
     />
-    <mat-card-title class="title-card">
+    <mat-card-title class="c-card__title">
       {{ pokemon.name | uppercase }}
     </mat-card-title>
-    <mat-card-content>
-      <mat-chip-set aria-label="Fish selection">
-        <mat-chip 
+    <mat-card-content class="c-card__content">
+      <mat-chip-set >
+        <mat-chip class="c-card__content-types"
           *ngFor="let type of pokemon.types" 
           [ngClass]="type.type.name">
-            {{ type.type.name }}
+            {{ type.type.name | titlecase }}
         </mat-chip>
       </mat-chip-set>
     </mat-card-content>
   </mat-card>
-</div>

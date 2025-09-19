@@ -18,21 +18,27 @@
   color: #868686;
 }
 
-.poke-list-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  // background-color: rgb(22, 33, 49);
-  // border-radius: 10px;
-  // padding: 0px 25px 25px 25px;
-  width: 90vw;
-  margin: auto;
-  margin-top: 30px;
-  align-items: center;
-}
+.c-home {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
+    margin-top: 30px;
+    align-items: center;
+  }
 
-button {
-  display: flex;
-  margin: 50px auto;
+  &__button {
+    display: flex;
+    margin: 50px auto;
+    background-color: #f1f1f1;
+    ::ng-deep .mat-mdc-button-base {
+      color: red;
+    }
+  }
+
 }
+/*
+< mdc-button mdc-button--raised mat-mdc-raised-button mat-unthemed mat-mdc-button-base" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label"> Carregar mais pokemons </span><span class="mat-mdc-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button>*/
