@@ -1,0 +1,59 @@
+<section class="dialog-container">
+  <div class="img-container">
+      <img
+        class="img-pokeball"
+        src="assets/img/pokeball.png" alt="">
+      <img
+      class="img-pokemom"
+      [src]="data.sprites.other.dream_world.front_default"
+      alt="Pokemon"/>
+
+      <ng-container *ngFor="let tipo of data.types">
+        <div class="tipo">
+
+          <h3>{{ tipo.type.name | uppercase }}</h3>
+
+      </div>
+      </ng-container>
+
+  </div>
+
+  <div class="informacao">
+    <div class="nome-pokemon">
+      <h1>{{ data.name | uppercase }}</h1>
+    </div>
+    <div class="caracteristicas">
+      <!-- Altura -->
+      <div>
+        <p>ALTURA</p>
+        <p>{{ data.height }}m</p>
+      </div>
+      <!-- Peso -->
+      <div>
+        <p>PESO</p>
+        <p>{{ data.weight }}kg</p>
+      </div>
+      <!-- Habilidade -->
+      <div>
+        <p>HABILIDADE</p>
+        <p>
+          {{ data.abilities[0].ability.name | uppercase }},
+          {{ data.abilities[1].ability.name | uppercase }}
+        </p>
+      </div>
+    </div>
+
+    <div class="estatisticas">
+      <ng-container *ngFor="let item of data.stats">
+        <label class="c-stats"
+          >{{ item.stat.name | uppercase }} ({{ item.base_stat }})</label
+        >
+        <mat-progress-bar
+          class="mb-5"
+          mode="determinate"
+          [value]="item.base_stat"
+        ></mat-progress-bar>
+      </ng-container>
+    </div>
+  </div>
+</section>
