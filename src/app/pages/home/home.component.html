@@ -1,0 +1,11 @@
+<div class="c-home">
+  <section class="c-home__list">
+    <ng-container *ngFor="let pokemon of pokemonsList;">
+      <app-poke-card [pokemon]="pokemon"></app-poke-card>
+    </ng-container>
+  </section>
+  
+  <button class="c-home__button" mat-raised-button="elevated" (click)="loadMorePokemons()">
+    Carregar mais pokemons
+  </button>
+</div>

@@ -1,0 +1,56 @@
+.dialog-container {
+  display: flex;
+  width: 600px;
+  justify-content: space-around;
+}
+
+.img-container {
+  // background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+
+}
+
+.img-pokeball {
+  width: 150px;
+  position: absolute;
+  opacity: 50%;
+}
+.img-pokemom {
+  width: 150px;
+  position: absolute;
+
+}
+
+
+.nome-pokemon {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.informacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.caracteristicas {
+  display: flex;
+  width: 300px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.caracteristica-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-5 {
+  margin-bottom: 15px;
+}
+
+
