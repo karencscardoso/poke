@@ -1,44 +1,167 @@
-.search {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: auto;
-  width: 30%;
-  background-color: transparent;
-  border-radius: 5px;
-  border: solid 3px #868686b9;
-}
-
-.search input {
-  width: 80%;
-  color: white;
-}
-
-.search button {
-  color: #868686;
-}
-
 .c-home {
-  &__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 90vw;
-    margin: auto;
-    margin-top: 30px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+
+  &__filtertype {
+    width: 140px;
+    background-color: #f1f1f1;
+    border-radius: 0 5px 5px 0;
+    padding: 10px;
+
+    &.selected {
+
+      ::ng-deep .mdc-form-field {
+        transform: scale(1.02);
+        /* Leve destaque */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      ::ng-deep .mdc-checkbox__checkmark {
+        color: white !important;
+      }
+
+      /* 1. Cores de Fundo (Aplicação da cor do tipo) */
+      /* Note o uso do `&.tipo` aninhado dentro de `&.selected` */
+      &.normal ::ng-deep .mdc-form-field {
+        background-color: #a8a878 !important;
+      }
+
+      &.fire ::ng-deep .mdc-form-field {
+        background-color: #f08030 !important;
+      }
+
+      &.water ::ng-deep .mdc-form-field {
+        background-color: #6890f0 !important;
+      }
+
+      &.grass ::ng-deep .mdc-form-field {
+        background-color: #78c850 !important;
+      }
+
+      &.poison ::ng-deep .mdc-form-field {
+        background-color: #a040a0 !important;
+      }
+
+      &.electric ::ng-deep .mdc-form-field {
+        background-color: #f8d030 !important;
+      }
+
+      &.psychic ::ng-deep .mdc-form-field {
+        background-color: #f85888 !important;
+      }
+
+      &.rock ::ng-deep .mdc-form-field {
+        background-color: #b8a038 !important;
+      }
+
+      &.flying ::ng-deep .mdc-form-field {
+        background-color: #a890f0 !important;
+      }
+
+      &.bug ::ng-deep .mdc-form-field {
+        background-color: #a8b820 !important;
+      }
+
+      &.dark ::ng-deep .mdc-form-field {
+        background-color: #705848 !important;
+      }
+
+      &.ground ::ng-deep .mdc-form-field {
+        background-color: #e0c068 !important;
+      }
+
+      &.ice ::ng-deep .mdc-form-field {
+        background-color: #98d8d8 !important;
+      }
+
+      &.steel ::ng-deep .mdc-form-field {
+        background-color: #b8b8d0 !important;
+      }
+
+      &.fairy ::ng-deep .mdc-form-field {
+        background-color: #ee99ac !important;
+      }
+
+      &.fighting ::ng-deep .mdc-form-field {
+        background-color: #c03028 !important;
+      }
+
+      &.dragon ::ng-deep .mdc-form-field {
+        background-color: #7038f8 !important;
+      }
+
+      &.ghost ::ng-deep .mdc-form-field {
+        background-color: #705898 !important;
+      }
+
+      /* 2. Cores de Texto (Branco por padrão) */
+      ::ng-deep .mat-mdc-label {
+        color: white !important;
+      }
+
+      /* 3. Ajuste de Texto para Tipos Claros */
+      &.electric ::ng-deep .mat-mdc-label,
+      &.ground ::ng-deep .mat-mdc-label,
+      &.ice ::ng-deep .mat-mdc-label,
+      &.steel ::ng-deep .mat-mdc-label,
+      &.fairy ::ng-deep .mat-mdc-label {
+        color: #212121 !important;
+      }
+    }
+
+    & button {
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      height: 40px;
+      cursor: pointer;
+      background-color: #ffffff;
+      font-weight: 550;
+    }
   }
+
+  &__content {
+    margin: 0 auto;
+    width: 100%;
+
+    &-form {
+      display: flex;
+      justify-content: space-evenly;
+      width: 40%;
+      margin: auto;
+      margin-top: 20px;
+      background-color: transparent;
+      border-radius: 5px;
+      gap: 10px;
+      align-items: center;
+
+      ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+        display: none !important;
+      }
+
+      &--search {
+        width: 100%;
+      }
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      flex-grow: 1;
+    }
+  }
+
+
+
 
   &__button {
     display: flex;
-    margin: 50px auto;
+    margin: 40px auto;
     background-color: #f1f1f1;
+
     ::ng-deep .mat-mdc-button-base {
       color: red;
     }
   }
-
 }
-/*
-< mdc-button mdc-button--raised mat-mdc-raised-button mat-unthemed mat-mdc-button-base" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label"> Carregar mais pokemons </span><span class="mat-mdc-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button>*/

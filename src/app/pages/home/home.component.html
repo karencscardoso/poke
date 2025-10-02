@@ -1,11 +1,33 @@
 <div class="c-home">
-  <section class="c-home__list">
-    <ng-container *ngFor="let pokemon of pokemonsList;">
-      <app-poke-card [pokemon]="pokemon"></app-poke-card>
-    </ng-container>
-  </section>
-  
-  <button class="c-home__button" mat-raised-button="elevated" (click)="loadMorePokemons()">
-    Carregar mais pokemons
-  </button>
+  <nav class="c-home__filtertype">
+    <label>Filtrar por Tipos:</label>
+    <div>
+      <mat-checkbox *ngFor="let type of pokemonTypes" [value]="type" (change)="toggleType(type)" [ngClass]="type"
+        [class.selected]="selectedTypes.includes(type)">
+        {{ type | titlecase }}
+      </mat-checkbox>
+    </div>
+    <button type="button" (click)="clearFilters()">
+      Limpar
+    </button>
+  </nav>
+
+  <div class="c-home__content">
+    <form class="c-home__content-form">
+      <mat-form-field class="c-home__content-form--search">
+        <mat-label>Pesquisar pokemom por Nome</mat-label>
+        <input matInput [formControl]="searchControl">
+        <mat-icon matSuffix (click)="handleGlobalSearch()">search</mat-icon>
+      </mat-form-field>
+    </form>
+
+    <main class="c-home__content-list">
+      <ng-container *ngFor="let pokemon of isSearching ? pokemonsListFiltered : pokemonsList;">
+        <app-poke-card [pokemon]="pokemon"></app-poke-card>
+      </ng-container>
+    </main>
+    <button class="c-home__button" mat-raised-button (click)="loadMorePokemons()">
+      Carregar mais pokemons
+    </button>
+  </div>
 </div>

@@ -1,16 +1,9 @@
-.center {
+.c-toolbar {
   display: flex;
-  margin: auto;
-}
-
-.mb-30 {
-  margin-bottom: 50px;
-}
-
-img {
+  justify-content: center;
+  background-color: #f1f1f1;
+  
+  & img {
   width: 120px;
 }
-
-.bg {
-  background-color: #f1f1f1;
 }
